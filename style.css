@@ -79,14 +79,13 @@ img {
 
 }
 
-
 .navbar {
 
     max-width: 1200px;
 
     margin: auto;
 
-    height: 75px;
+    height: 80px;
 
     padding: 0 25px;
 
@@ -98,100 +97,120 @@ img {
 
 }
 
-
 .logo {
-
-    font-size: 25px;
-
-    font-weight: 800;
-
-    letter-spacing: -1px;
-
-}
-
-
-.logo span,
-.footer span {
-
-    color: var(--accent);
-
-}
-
-
-.nav-menu {
-
-    list-style: none;
-
-    display: flex;
-
-    gap: 35px;
-
-}
-
-
-.nav-menu a {
-
-    color: #aaa;
-
-    font-size: 14px;
-
-    transition: 0.3s;
-
-}
-
-
-.nav-menu a:hover,
-.nav-menu a.active {
-
     color: white;
-
+    font-size: 24px;
+    font-weight: bold;
 }
 
+/* =========================
+   TEMPAT MENU + TOMBOL
+========================= */
 
-.nav-menu a.active {
-
+.menu-container {
     position: relative;
 
+    display: flex;
+    align-items: center;
 }
 
+/* =========================
+   LOGO 3 GARIS
+========================= */
 
-.nav-menu a.active::after {
+.hamburger {
+    width: 35px;
+    height: 35px;
 
-    content: "";
+    padding: 0;
 
-    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 
-    width: 5px;
-
-    height: 5px;
-
-    background: var(--accent);
-
-    border-radius: 50%;
-
-    bottom: -10px;
-
-    left: 50%;
-
-}
-
-
-.menu-btn {
-
-    display: none;
+    flex-direction: row;
 
     background: none;
-
     border: none;
-
-    color: white;
-
-    font-size: 22px;
 
     cursor: pointer;
 
+    position: relative;
+    z-index: 2;
+
+    transition: transform 0.4s ease;
 }
 
+/* Garis awalnya VERTIKAL */
+
+.hamburger span {
+    width: 3px;
+    height: 33px;
+
+    background: white;
+
+    border-radius: 5px;
+}
+
+/* Ketika diklik:
+   VERTIKAL → HORIZONTAL */
+
+.hamburger.active {
+    transform: rotate(90deg);
+}
+
+
+/* =========================
+   MENU
+========================= */
+
+.menu {
+    position: absolute;
+
+    top: 50%;
+    right: 50px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 20px;
+
+    white-space: nowrap;
+
+    opacity: 0;
+
+    pointer-events: none;
+
+    transform: translateY(-50%) translateX(20px);
+
+    transition:
+        transform 0.4s ease,
+        opacity 0.3s ease;
+}
+
+/* Menu muncul ke arah KIRI */
+
+.menu.active {
+    opacity: 1;
+
+    pointer-events: auto;
+
+    transform: translateY(-50%) translateX(0);
+}
+
+.menu a {
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 17px;
+
+    transition: 0.2s ease;
+}
+
+.menu a:hover {
+    color: #00e5ff;
+}
 
 /* =========================
    HERO
