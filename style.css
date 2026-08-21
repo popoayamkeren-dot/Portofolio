@@ -211,7 +211,39 @@ img {
 .menu a:hover {
     color: #00e5ff;
 }
+@media (max-width: 600px) {
 
+    .navbar {
+        padding: 0 20px;
+    }
+
+    .logo {
+        font-size: 20px;
+    }
+
+    .hamburger {
+        width: 30px;
+        height: 30px;
+    }
+
+    .hamburger span {
+        width: 3px;
+        height: 22px;
+    }
+
+    /* MENU KHUSUS HP */
+    .menu {
+        right: 35px;
+
+        gap: 15px;
+
+        font-size: 14px;
+    }
+
+    .menu a {
+        font-size: 14px;
+    }
+}
 /* =========================
    HERO
 ========================= */
