@@ -30,46 +30,33 @@
 <body>
 
 
-<header class="header">
+<header>
+<nav class="navbar">
 
-    <nav class="navbar">
+    <div class="logo">
+        Enos
+    </div>
 
-        <a href="index.html" class="logo">
-            ENOS<span>.</span>
-        </a>
+    <div class="menu-container">
 
-
-        <ul class="nav-menu">
-
-            <li>
-                <a href="index.html">Home</a>
-            </li>
-
-            <li>
-                <a href="about.html">About</a>
-            </li>
-
-            <li>
-                <a href="projects.html">Projects</a>
-            </li>
-
-            <li>
-                <a href="contact.html" class="active">
-                    Contact
-                </a>
-            </li>
-
-        </ul>
-
-
-        <button class="menu-btn" id="menuBtn">
-
-            <i class="fa-solid fa-bars"></i>
-
+        <!-- Tombol 3 garis -->
+        <button class="hamburger" id="hamburger" onclick="toggleMenu()">
+            <span></span>
+            <span></span>
+            <span></span>
         </button>
 
-    </nav>
+        <!-- Menu -->
+        <div class="menu" id="menu">
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="projects.html">Project</a>
+            <a href="contact.html">Contact</a>
+        </div>
 
+    </div>
+
+</nav>
 </header>
 
 
