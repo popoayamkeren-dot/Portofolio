@@ -767,7 +767,17 @@ img {
         #151515;
 
 }
+.project-image.five {
 
+    background:
+        linear-gradient(
+            135deg,
+            #d83d3d,
+            transparent
+        ),
+        #151515;
+
+}
 
 .project-number {
 
