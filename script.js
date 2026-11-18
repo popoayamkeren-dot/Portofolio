@@ -240,3 +240,27 @@ if (contactForm) {
     );
 
 }
+const form = document.getElementById("contactForm");
+const status = document.getElementById("formStatus");
+
+if (form) {
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    status.textContent = "Mengirim...";
+    try {
+      const res = await fetch(form.action, {
+        method: "POST",
+        body: new FormData(form),
+        headers: { Accept: "application/json" },
+      });
+      if (res.ok) {
+        status.textContent = "Pesan terkirim, terima kasih!";
+        form.reset();
+      } else {
+        status.textContent = "Gagal mengirim. Coba lagi ya.";
+      }
+    } catch {
+      status.textContent = "Koneksi bermasalah. Coba lagi ya.";
+    }
+  });
+}
